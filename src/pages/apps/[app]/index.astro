@@ -1,0 +1,62 @@
+---
+import MainLayout from "../../../layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const apps = await getCollection("apps");
+  return apps.map((app) => ({
+    params: { app: app.slug },
+    props: { app },
+  }));
+}
+
+const { app } = Astro.props;
+---
+
+<MainLayout
+  title={`${app.data.title} | ClearMetrics Lab`}
+  description={app.data.description}
+>
+  <section class="py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="mb-8">
+        <span
+          class="inline-block px-4 py-2 text-sm font-medium rounded-full"
+          style={{
+            backgroundColor: `${app.data.theme.accent}15`,
+            color: app.data.theme.accent,
+            border: `1px solid ${app.data.theme.accent}30`,
+          }}
+        >
+          App Landing Page
+        </span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">{app.data.title}</h1>
+      <p class="text-xl text-text-muted mb-12 max-w-2xl mx-auto">
+        {app.data.tagline}
+      </p>
+
+      <div class="p-8 rounded-2xl bg-surface/50 border border-border">
+        <p class="text-text-muted">
+          🎨 This is a placeholder. The unique UI/UX for this app will be built in a future prompt.
+        </p>
+        <div class="mt-6 flex flex-wrap justify-center gap-4">
+          <a
+            href={`/blog?app=${app.slug}`}
+            class="inline-flex items-center px-4 py-2 rounded-lg bg-accent/10 text-accent border border-accent/20 hover:bg-accent/20 transition-colors"
+            style={{ "--color-accent": app.data.theme.accent } as any}
+          >
+            View Blog Posts →
+          </a>
+          <a
+            href={`/apps/${app.slug}/privacy-policy`}
+            class="inline-flex items-center px-4 py-2 rounded-lg border border-border hover:border-accent/30 text-text-muted hover:text-text-primary transition-colors"
+          >
+            Privacy Policy
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

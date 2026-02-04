@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Zinc Palette (Premium Dark) */
+    --bg-main: #09090b;
+    --bg-surface: #18181b;
+    --border-color: rgba(255, 255, 255, 0.08);
+
+    /* Text */
+    --text-primary: #fafafa;
+    --text-muted: #a1a1aa;
+
+    /* Electric Blue Accent - RGB split for opacity magic */
+    --accent-r: 56;
+    --accent-g: 189;
+    --accent-b: 248;
+    --color-accent: rgb(var(--accent-r), var(--accent-g), var(--accent-b));
+
+    /* Cyan for gradient */
+    --cyan-r: 34;
+    --cyan-g: 211;
+    --cyan-b: 238;
+  }
+
+  html {
+    font-family: "Geist", system-ui, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100vh;
+  }
+}
+
+/* Pure OLED background - no noise */
+
+/* Custom Tailwind utilities via CSS */
+@theme {
+  --color-background: var(--bg-main);
+  --color-surface: var(--bg-surface);
+  --color-border: var(--border-color);
+  --color-text-primary: var(--text-primary);
+  --color-text-muted: var(--text-muted);
+  --color-accent: rgb(var(--accent-r) var(--accent-g) var(--accent-b));
+
+  /* Font family */
+  --font-sans: "Geist", system-ui, sans-serif;
+}
+
+/* Electric gradient text */
+.gradient-text {
+  background: linear-gradient(135deg,
+      rgb(56, 189, 248) 0%,
+      rgb(34, 211, 238) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-bottom: 0.1em;
+  /* Prevent descender clipping */
+  display: inline-block;
+}
+
+/* Glowing border effect */
+.glow-border {
+  box-shadow:
+    0 0 0 1px rgba(56, 189, 248, 0.3),
+    0 0 20px -5px rgba(56, 189, 248, 0.4);
+}
+
+.glow-border:hover {
+  box-shadow:
+    0 0 0 1px rgba(56, 189, 248, 0.5),
+    0 0 30px -5px rgba(56, 189, 248, 0.6);
+}
+
+/* Selection styling */
+::selection {
+  background-color: rgb(var(--accent-r) var(--accent-g) var(--accent-b) / 0.3);
+  color: white;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid rgb(var(--accent-r) var(--accent-g) var(--accent-b));
+  outline-offset: 2px;
+}

@@ -1,0 +1,33 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
+
+// Import React sections
+import { Hero } from "../components/sections/Hero";
+import { AppsGrid } from "../components/sections/AppsGrid";
+import { About } from "../components/sections/About";
+import { Contact } from "../components/sections/Contact";
+
+// Fetch all apps
+const apps = await getCollection("apps");
+const appsData = apps.map((app) => ({
+  slug: app.slug,
+  title: app.data.title,
+  tagline: app.data.tagline,
+  icon: app.data.icon,
+  theme: app.data.theme,
+}));
+
+// Contact webhook URL from env
+const webhookUrl = import.meta.env.PUBLIC_CONTACT_WEBHOOK || "/api/contact";
+---
+
+<MainLayout
+  title="ClearMetrics Lab | Mobile App Development Studio"
+  description="Building the next generation of mobile apps. A boutique studio focused on creating exceptional user experiences."
+>
+  <Hero client:load />
+  <AppsGrid apps={appsData} client:load />
+  <About client:load />
+  <Contact webhookUrl={webhookUrl} client:load />
+</MainLayout>

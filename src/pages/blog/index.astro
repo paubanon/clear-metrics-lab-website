@@ -1,0 +1,64 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
+import { PostList } from "../../components/blog/PostList";
+
+// Get filter from query params
+const appFilter = Astro.url.searchParams.get("app");
+
+// Fetch all blog posts
+const allPosts = await getCollection("blog", ({ data }) => !data.draft);
+
+// Filter by app if specified
+const posts = appFilter
+  ? allPosts.filter((post) => post.data.appSlug === appFilter)
+  : allPosts;
+
+// Sort by date (newest first)
+posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// Transform to serializable format
+const postsData = posts.map((post) => ({
+  slug: post.slug,
+  title: post.data.title,
+  description: post.data.description,
+  pubDate: post.data.pubDate.toISOString(),
+  appSlug: post.data.appSlug,
+  tags: post.data.tags,
+}));
+
+// Get app title for filter display
+const apps = await getCollection("apps");
+const filterApp = appFilter ? apps.find((app) => app.slug === appFilter) : null;
+---
+
+<MainLayout
+  title={filterApp ? `${filterApp.data.title} Blog | ClearMetrics Lab` : "Blog | ClearMetrics Lab"}
+  description="Latest updates, tutorials, and insights from ClearMetrics Lab."
+>
+  <section class="py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-12">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">
+          {filterApp ? `${filterApp.data.title} Blog` : "Blog"}
+        </h1>
+        <p class="text-text-muted max-w-2xl">
+          {filterApp
+            ? `Updates and articles about ${filterApp.data.title}.`
+            : "Latest updates, tutorials, and insights from our apps."}
+        </p>
+
+        {filterApp && (
+          <a
+            href="/blog"
+            class="inline-flex items-center mt-4 text-sm text-accent hover:underline"
+          >
+            ← View all posts
+          </a>
+        )}
+      </div>
+
+      <PostList posts={postsData} client:load />
+    </div>
+  </section>
+</MainLayout>

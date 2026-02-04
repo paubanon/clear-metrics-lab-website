@@ -1,0 +1,59 @@
+---
+import AppLayout from "../../../layouts/AppLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const apps = await getCollection("apps");
+  return apps.map((app) => ({
+    params: { app: app.slug },
+    props: { app },
+  }));
+}
+
+const { app } = Astro.props;
+
+// Try to get privacy policy content if it exists
+const legalDocs = await getCollection("legal");
+const privacyPolicy = legalDocs.find(
+  (doc) => doc.data.appSlug === app.slug && doc.slug.includes("privacy")
+);
+---
+
+<AppLayout
+  title={`Privacy Policy | ${app.data.title}`}
+  description={`Privacy policy for ${app.data.title}`}
+  theme={app.data.theme}
+>
+  <section class="py-24">
+    <div class="max-w-3xl mx-auto px-6">
+      <h1 class="text-3xl md:text-4xl font-bold mb-8">
+        Privacy Policy
+      </h1>
+
+      {privacyPolicy ? (
+        <div class="prose prose-invert prose-zinc max-w-none">
+          <!-- Privacy policy content will be rendered here when available -->
+          <p class="text-text-muted">Content coming soon.</p>
+        </div>
+      ) : (
+        <div class="p-8 rounded-2xl bg-surface/50 border border-border">
+          <p class="text-text-muted">
+            📝 Privacy policy content for {app.data.title} will be added here.
+          </p>
+          <p class="text-sm text-text-muted mt-4">
+            Create a file at: <code class="text-accent">src/content/legal/{app.slug}/privacy-policy.mdx</code>
+          </p>
+        </div>
+      )}
+
+      <div class="mt-12">
+        <a
+          href={`/apps/${app.slug}`}
+          class="text-accent hover:underline"
+        >
+          ← Back to {app.data.title}
+        </a>
+      </div>
+    </div>
+  </section>
+</AppLayout>
