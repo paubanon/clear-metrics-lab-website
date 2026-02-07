@@ -191,13 +191,36 @@ export function PricingSection() {
           ))}
         </div>
 
-        {/* Additional info */}
+        {/* Free trial notice */}
         <motion.div
-          className="text-center mt-12"
+          className="text-center mt-12 p-6 rounded-2xl"
+          style={{
+            backgroundColor: "var(--color-bg)",
+            border: "2px solid var(--color-primary)",
+          }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <Zap className="w-5 h-5" style={{ color: "var(--color-primary)" }} />
+            <h4 className="text-xl font-bold" style={{ color: "var(--color-text)" }}>
+              1 Month Free Trial
+            </h4>
+          </div>
+          <p style={{ color: "var(--color-text-muted)" }}>
+            All paid plans include a free month to try all features. Cancel anytime.
+          </p>
+        </motion.div>
+
+        {/* Additional info */}
+        <motion.div
+          className="text-center mt-6"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
         >
           <p
             className="text-sm"
