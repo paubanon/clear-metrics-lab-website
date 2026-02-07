@@ -7,28 +7,28 @@ const features = [
   {
     icon: Zap,
     title: "Unmatched Flow",
-    description: "Seamless supersets and edit exercises on-the-fly. No other app comes close to this level of flexibility during your workout.",
+    description: "Seamlessly rearrange exercises and supersets on-the-fly without losing your data. In the gym and the machine is occupied? In a rush and need to modify your training structure? Simply drag and drop exercises to adapt your workout in real-time. Switch between straight sets and supersets effortlessly. This level of flexibility means you're never stuck waiting or wasting time—your workout adapts to the gym environment, not the other way around. No other app comes close to this dynamic workout flow.",
     image: "/images/apps/workout-lab/screenshots/active-workout-light-theme.jpg",
     highlight: false,
   },
   {
     icon: Rocket,
     title: "Log Any Exercise, Any Way",
-    description: "Strength, cardio, mobility, strongman, calisthenics - track Load, Reps, Time, Distance, Range of Motion, and more. Complete flexibility.",
+    description: "Built for multidisciplinary athletes: strength training, CrossFit, calisthenics, powerlifting, Olympic lifting, mobility work, yoga, strongman events, and more. Track Load, Reps, Time, Distance, Range of Motion, Body Weight, and any combination of metrics that fit your training. Whether you're doing farmers carries, pistol squats, handstand holds, or traditional bench press—log it exactly how you need it. Complete flexibility for every movement, every sport, every goal.",
     image: "/images/apps/workout-lab/screenshots/exercise-farmers-carry.jpg",
     highlight: false,
   },
   {
     icon: LineChart,
     title: "Data Analysis & Predictive Metrics",
-    description: "Laboratory-style visualizations with Max/Avg/Min metrics, 1RM evolution tracking, dual Y-axis charts, and volume/intensity analysis.",
+    description: "Make informed decisions with laboratory-grade analytics. Track your 1RM evolution over time, visualize Max/Avg/Min performance metrics, and analyze volume and intensity trends with dual Y-axis charts. Understand exactly what's working in your training and what needs adjustment. No more guessing—let the data guide your programming decisions. Advanced visualizations turn your workout history into actionable insights for continuous improvement.",
     image: "/images/apps/workout-lab/screenshots/Exercise_analysis.jpg",
     highlight: false,
   },
   {
     icon: Target,
     title: "Proprietary Goal Algorithm",
-    description: "Multi-metric goals with real-time progress tracking and delta of improvement. See exactly how much you've progressed (+6%, +3%) towards your targets.",
+    description: "Stay motivated and engaged with our unique goal-tracking system. Set multi-metric goals and watch real-time progress with delta improvements (+6% closer to your squat PR, +3% increase in volume this week). Goals are scientifically proven to boost motivation, maintain engagement, and accelerate progress. See exactly how much you've improved and how close you are to your targets. This feature alone has transformed how thousands of athletes approach their training.",
     image: "/images/apps/workout-lab/screenshots/delta-improvement-dark-theme.png",
     highlight: true, // Standout feature
   },
@@ -109,7 +109,7 @@ export function FeaturesSection() {
                     />
                   </div>
                   <h3
-                    className="text-3xl md:text-4xl font-bold mb-4"
+                    className="text-2xl font-bold mb-4"
                     style={{ color: "var(--color-text)" }}
                   >
                     {feature.title}
@@ -126,7 +126,7 @@ export function FeaturesSection() {
                     </div>
                   )}
                   <p
-                    className="text-xl md:text-2xl leading-relaxed"
+                    className="text-lg leading-relaxed"
                     style={{ color: "var(--color-text-muted)" }}
                   >
                     {feature.description}
