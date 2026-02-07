@@ -58,15 +58,18 @@ export function ContactForm({
   `;
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4" aria-label="Contact form">
             <div>
                 <label htmlFor="name" className="block text-sm font-medium text-text-muted mb-2">
-                    Name
+                    Name <span className="text-red-400" aria-label="required">*</span>
                 </label>
                 <input
                     type="text"
                     id="name"
+                    name="name"
                     required
+                    aria-required="true"
+                    aria-label="Your full name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className={inputStyles}
@@ -77,12 +80,15 @@ export function ContactForm({
 
             <div>
                 <label htmlFor="email" className="block text-sm font-medium text-text-muted mb-2">
-                    Email
+                    Email <span className="text-red-400" aria-label="required">*</span>
                 </label>
                 <input
                     type="email"
                     id="email"
+                    name="email"
                     required
+                    aria-required="true"
+                    aria-label="Your email address"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className={inputStyles}
@@ -97,6 +103,8 @@ export function ContactForm({
                 </label>
                 <select
                     id="appInterest"
+                    name="appInterest"
+                    aria-label="Select which app you're interested in"
                     value={formData.appInterest}
                     onChange={(e) => setFormData({ ...formData, appInterest: e.target.value })}
                     className={inputStyles}
@@ -111,11 +119,14 @@ export function ContactForm({
 
             <div>
                 <label htmlFor="message" className="block text-sm font-medium text-text-muted mb-2">
-                    Message
+                    Message <span className="text-red-400" aria-label="required">*</span>
                 </label>
                 <textarea
                     id="message"
+                    name="message"
                     required
+                    aria-required="true"
+                    aria-label="Your message"
                     rows={5}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -126,29 +137,44 @@ export function ContactForm({
             </div>
 
             {status === "error" && (
-                <p className="text-red-400 text-sm">{errorMessage}</p>
+                <div role="alert" aria-live="assertive" className="text-red-400 text-sm">
+                    {errorMessage}
+                </div>
+            )}
+
+            {status === "success" && (
+                <div role="status" aria-live="polite" className="text-green-400 text-sm">
+                    Message sent successfully! I'll get back to you soon.
+                </div>
             )}
 
             <Button
                 type="submit"
                 disabled={status === "loading" || status === "success"}
                 className="w-full"
+                aria-label={
+                    status === "loading"
+                        ? "Sending message, please wait"
+                        : status === "success"
+                        ? "Message sent successfully"
+                        : "Send message"
+                }
             >
                 {status === "loading" && (
                     <>
-                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" aria-hidden="true" />
                         Sending...
                     </>
                 )}
                 {status === "success" && (
                     <>
-                        <CheckCircle className="w-4 h-4 mr-2" />
+                        <CheckCircle className="w-4 h-4 mr-2" aria-hidden="true" />
                         Sent!
                     </>
                 )}
                 {(status === "idle" || status === "error") && (
                     <>
-                        <Send className="w-4 h-4 mr-2" />
+                        <Send className="w-4 h-4 mr-2" aria-hidden="true" />
                         Send Message
                     </>
                 )}

@@ -11,17 +11,17 @@ describe("ContactForm Component", () => {
   it("renders all required form fields", () => {
     render(<ContactForm />);
 
-    expect(screen.getByLabelText(/name/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/app interest/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/message/i)).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: /your full name/i })).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: /your email address/i })).toBeInTheDocument();
+    expect(screen.getByRole("combobox", { name: /select which app/i })).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: /your message/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /send message/i })).toBeInTheDocument();
   });
 
   it("includes all app interest dropdown options", () => {
     render(<ContactForm />);
 
-    const select = screen.getByLabelText(/app interest/i);
+    const select = screen.getByRole("combobox", { name: /select which app/i });
     expect(select).toBeInTheDocument();
 
     const options = screen.getAllByRole("option");
@@ -57,10 +57,10 @@ describe("ContactForm Component", () => {
 
     render(<ContactForm webhookUrl={mockWebhookUrl} />);
 
-    await user.type(screen.getByLabelText(/name/i), "John Doe");
-    await user.type(screen.getByLabelText(/email/i), "john@example.com");
-    await user.selectOptions(screen.getByLabelText(/app interest/i), "Workout Lab");
-    await user.type(screen.getByLabelText(/message/i), "I love your app!");
+    await user.type(screen.getByRole("textbox", { name: /your full name/i }), "John Doe");
+    await user.type(screen.getByRole("textbox", { name: /your email address/i }), "john@example.com");
+    await user.selectOptions(screen.getByRole("combobox", { name: /select which app/i }), "Workout Lab");
+    await user.type(screen.getByRole("textbox", { name: /your message/i }), "I love your app!");
 
     await user.click(screen.getByRole("button", { name: /send message/i }));
 
@@ -93,9 +93,9 @@ describe("ContactForm Component", () => {
 
     render(<ContactForm />);
 
-    await user.type(screen.getByLabelText(/name/i), "Jane Smith");
-    await user.type(screen.getByLabelText(/email/i), "jane@example.com");
-    await user.type(screen.getByLabelText(/message/i), "Hello!");
+    await user.type(screen.getByRole("textbox", { name: /your full name/i }), "Jane Smith");
+    await user.type(screen.getByRole("textbox", { name: /your email address/i }), "jane@example.com");
+    await user.type(screen.getByRole("textbox", { name: /your message/i }), "Hello!");
     await user.click(screen.getByRole("button", { name: /send message/i }));
 
     await waitFor(() => {
@@ -114,9 +114,9 @@ describe("ContactForm Component", () => {
 
     render(<ContactForm />);
 
-    await user.type(screen.getByLabelText(/name/i), "Test User");
-    await user.type(screen.getByLabelText(/email/i), "test@example.com");
-    await user.type(screen.getByLabelText(/message/i), "Test message");
+    await user.type(screen.getByRole("textbox", { name: /your full name/i }), "Test User");
+    await user.type(screen.getByRole("textbox", { name: /your email address/i }), "test@example.com");
+    await user.type(screen.getByRole("textbox", { name: /your message/i }), "Test message");
     await user.click(screen.getByRole("button", { name: /send message/i }));
 
     await waitFor(() => {
@@ -136,9 +136,9 @@ describe("ContactForm Component", () => {
 
     render(<ContactForm />);
 
-    const nameInput = screen.getByLabelText(/name/i) as HTMLInputElement;
-    const emailInput = screen.getByLabelText(/email/i) as HTMLInputElement;
-    const messageInput = screen.getByLabelText(/message/i) as HTMLTextAreaElement;
+    const nameInput = screen.getByRole("textbox", { name: /your full name/i }) as HTMLInputElement;
+    const emailInput = screen.getByRole("textbox", { name: /your email address/i }) as HTMLInputElement;
+    const messageInput = screen.getByRole("textbox", { name: /your message/i }) as HTMLTextAreaElement;
 
     await user.type(nameInput, "Clear Test");
     await user.type(emailInput, "clear@example.com");
@@ -163,9 +163,9 @@ describe("ContactForm Component", () => {
 
     render(<ContactForm />);
 
-    await user.type(screen.getByLabelText(/name/i), "Dupe Test");
-    await user.type(screen.getByLabelText(/email/i), "dupe@example.com");
-    await user.type(screen.getByLabelText(/message/i), "Duplicate test");
+    await user.type(screen.getByRole("textbox", { name: /your full name/i }), "Dupe Test");
+    await user.type(screen.getByRole("textbox", { name: /your email address/i }), "dupe@example.com");
+    await user.type(screen.getByRole("textbox", { name: /your message/i }), "Duplicate test");
 
     const submitButton = screen.getByRole("button", { name: /send message/i });
     await user.click(submitButton);
