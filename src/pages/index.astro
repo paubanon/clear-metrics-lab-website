@@ -28,6 +28,6 @@ const webhookUrl = import.meta.env.PUBLIC_CONTACT_WEBHOOK || "/api/contact";
 >
   <Hero client:load />
   <AppsGrid apps={appsData} client:load />
-  <About client:load />
-  <Contact webhookUrl={webhookUrl} client:load />
+  <About client:visible />
+  <Contact webhookUrl={webhookUrl} client:visible />
 </MainLayout>
