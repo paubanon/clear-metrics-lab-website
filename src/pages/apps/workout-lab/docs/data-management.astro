@@ -1,0 +1,709 @@
+---
+import MainLayout from "../../../../layouts/MainLayout.astro";
+
+const title = "Data Management - Workout Lab Documentation";
+const description = "Learn how to access, export, and delete your data in Workout Lab. GDPR-compliant data management guide.";
+---
+
+<MainLayout title={title} description={description}>
+  <div class="min-h-screen bg-[var(--color-bg-dark)] py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      {/* Header */}
+      <div class="mb-12">
+        <div class="flex flex-wrap gap-4 items-center mb-6">
+          <a
+            href="/apps/workout-lab"
+            class="inline-flex items-center gap-2 text-sm hover:underline"
+            style="color: var(--color-primary)"
+          >
+            ← Workout Lab
+          </a>
+          <span style="color: var(--color-text-muted)">•</span>
+          <a
+            href="/apps/workout-lab/docs"
+            class="inline-flex items-center gap-2 text-sm hover:underline"
+            style="color: var(--color-primary)"
+          >
+            Documentation
+          </a>
+        </div>
+        <h1
+          class="text-4xl md:text-5xl font-bold mb-4"
+          style="color: var(--color-text)"
+        >
+          Data Management Guide
+        </h1>
+        <p class="text-lg" style="color: var(--color-text-muted)">
+          Your data, your control. Learn how to access, export, and delete your Workout Lab data.
+        </p>
+      </div>
+
+      {/* Quick Links */}
+      <div
+        class="rounded-xl p-6 mb-12"
+        style="background-color: var(--color-bg); border: 2px solid var(--color-primary)"
+      >
+        <h2 class="text-xl font-bold mb-4" style="color: var(--color-text)">
+          Quick Navigation
+        </h2>
+        <div class="grid md:grid-cols-2 gap-3">
+          <a href="#access-data" class="hover:underline" style="color: var(--color-primary)">
+            → Access Your Data
+          </a>
+          <a href="#export-data" class="hover:underline" style="color: var(--color-primary)">
+            → Export Your Data
+          </a>
+          <a href="#delete-data" class="hover:underline" style="color: var(--color-primary)">
+            → Delete Specific Data
+          </a>
+          <a href="#delete-account" class="hover:underline" style="color: var(--color-primary)">
+            → Delete Your Account
+          </a>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div class="space-y-12">
+        {/* Access Your Data */}
+        <section id="access-data">
+          <h2 class="text-3xl font-bold mb-6" style="color: var(--color-text)">
+            Access Your Data
+          </h2>
+          <p style="color: var(--color-text-muted)" class="leading-relaxed mb-6">
+            You have the right to access all personal data we hold about you. All your workout data is already accessible within the app, but you can also request a complete data package.
+          </p>
+
+          <div
+            class="rounded-xl p-6 mb-6"
+            style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+          >
+            <h3 class="text-xl font-semibold mb-4" style="color: var(--color-text)">
+              What Data We Store
+            </h3>
+            <ul style="color: var(--color-text-muted)" class="space-y-2">
+              <li>• Account information (email, username, settings)</li>
+              <li>• Workout logs (exercises, sets, reps, weight, time)</li>
+              <li>• Progress metrics (1RM calculations, volume, consistency)</li>
+              <li>• Goals and tracking data</li>
+              <li>• Body weight measurements</li>
+              <li>• Exercise notes and comments</li>
+              <li>• Custom exercises and routines</li>
+            </ul>
+          </div>
+
+          <h3 class="text-xl font-semibold mb-4 mt-8" style="color: var(--color-text)">
+            How to Access Your Data
+          </h3>
+          <div class="space-y-4">
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-white"
+                  style="background-color: var(--color-primary)"
+                >
+                  1
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2" style="color: var(--color-text)">
+                    Open Workout Lab App
+                  </h4>
+                  <p style="color: var(--color-text-muted)">
+                    Launch the Workout Lab app on your device.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-white"
+                  style="background-color: var(--color-primary)"
+                >
+                  2
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2" style="color: var(--color-text)">
+                    Go to Profile → Settings
+                  </h4>
+                  <p style="color: var(--color-text-muted)">
+                    Navigate to your Profile tab, then tap Settings.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-white"
+                  style="background-color: var(--color-primary)"
+                >
+                  3
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2" style="color: var(--color-text)">
+                    Select "Data & Privacy"
+                  </h4>
+                  <p style="color: var(--color-text-muted)">
+                    Find and tap the "Data & Privacy" option in Settings.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-white"
+                  style="background-color: var(--color-primary)"
+                >
+                  4
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2" style="color: var(--color-text)">
+                    View Your Data Summary
+                  </h4>
+                  <p style="color: var(--color-text-muted)">
+                    You'll see a summary of all data categories we store about you.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Export Your Data */}
+        <section id="export-data" class="pt-8 border-t" style="border-color: var(--color-border)">
+          <h2 class="text-3xl font-bold mb-6" style="color: var(--color-text)">
+            Export Your Data
+          </h2>
+          <p style="color: var(--color-text-muted)" class="leading-relaxed mb-6">
+            You can download a complete copy of your workout data in machine-readable formats (JSON or CSV). This allows you to back up your data or transfer it to another service.
+          </p>
+
+          <h3 class="text-xl font-semibold mb-4" style="color: var(--color-text)">
+            How to Export Your Data
+          </h3>
+          <div class="space-y-4">
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-white"
+                  style="background-color: var(--color-primary)"
+                >
+                  1
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2" style="color: var(--color-text)">
+                    Go to Data & Privacy Settings
+                  </h4>
+                  <p style="color: var(--color-text-muted)">
+                    Profile → Settings → Data & Privacy
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-white"
+                  style="background-color: var(--color-primary)"
+                >
+                  2
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2" style="color: var(--color-text)">
+                    Tap "Export My Data"
+                  </h4>
+                  <p style="color: var(--color-text-muted)">
+                    Select the export option and choose your preferred format (JSON or CSV).
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-white"
+                  style="background-color: var(--color-primary)"
+                >
+                  3
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2" style="color: var(--color-text)">
+                    Choose What to Include
+                  </h4>
+                  <p style="color: var(--color-text-muted)" class="mb-3">
+                    Select which data categories to export:
+                  </p>
+                  <ul style="color: var(--color-text-muted)" class="space-y-1 ml-4">
+                    <li>• Workout logs</li>
+                    <li>• Exercise library (including custom exercises)</li>
+                    <li>• Goals and progress metrics</li>
+                    <li>• Body weight history</li>
+                    <li>• Account information</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-white"
+                  style="background-color: var(--color-primary)"
+                >
+                  4
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2" style="color: var(--color-text)">
+                    Download Your Data
+                  </h4>
+                  <p style="color: var(--color-text-muted)">
+                    The export file will be generated and ready to download. You can save it to your device or share it via email/cloud storage.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="rounded-xl p-6 mt-6"
+            style="background-color: var(--color-bg-light); border: 1px solid var(--color-border)"
+          >
+            <p style="color: var(--color-text-muted)" class="text-sm">
+              <strong>Note:</strong> Data export typically processes within a few seconds for most accounts. Large datasets (>10,000 workouts) may take up to 1 minute.
+            </p>
+          </div>
+        </section>
+
+        {/* Delete Specific Data */}
+        <section id="delete-data" class="pt-8 border-t" style="border-color: var(--color-border)">
+          <h2 class="text-3xl font-bold mb-6" style="color: var(--color-text)">
+            Delete Specific Data
+          </h2>
+          <p style="color: var(--color-text-muted)" class="leading-relaxed mb-6">
+            You can delete individual workouts, exercises, or other specific data without deleting your entire account.
+          </p>
+
+          <div class="space-y-6">
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <h3 class="text-lg font-semibold mb-3" style="color: var(--color-text)">
+                Delete Individual Workouts
+              </h3>
+              <ol style="color: var(--color-text-muted)" class="space-y-2 ml-6" style="list-style-type: decimal;">
+                <li>Go to the Analysis tab or History view</li>
+                <li>Find the workout you want to delete</li>
+                <li>Long-press (or swipe left) on the workout</li>
+                <li>Tap "Delete" and confirm</li>
+              </ol>
+            </div>
+
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <h3 class="text-lg font-semibold mb-3" style="color: var(--color-text)">
+                Delete Custom Exercises
+              </h3>
+              <ol style="color: var(--color-text-muted)" class="space-y-2 ml-6" style="list-style-type: decimal;">
+                <li>Go to Profile → Exercise Library</li>
+                <li>Find your custom exercise</li>
+                <li>Tap on the exercise, then tap "Delete"</li>
+                <li>Confirm deletion</li>
+              </ol>
+              <p style="color: var(--color-text-muted)" class="text-sm mt-3">
+                <strong>Note:</strong> Deleting an exercise does not delete historical workout logs that used it.
+              </p>
+            </div>
+
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <h3 class="text-lg font-semibold mb-3" style="color: var(--color-text)">
+                Delete Goals
+              </h3>
+              <ol style="color: var(--color-text-muted)" class="space-y-2 ml-6" style="list-style-type: decimal;">
+                <li>Go to the Goals tab</li>
+                <li>Tap on the goal you want to delete</li>
+                <li>Tap "Delete Goal" and confirm</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        {/* Delete Account */}
+        <section id="delete-account" class="pt-8 border-t" style="border-color: var(--color-border)">
+          <h2 class="text-3xl font-bold mb-6" style="color: var(--color-text)">
+            Delete Your Account
+          </h2>
+
+          <div
+            class="rounded-xl p-6 mb-6"
+            style="background-color: #FEE2E2; border: 2px solid #DC2626"
+          >
+            <h3 class="text-lg font-bold mb-2" style="color: #991B1B">
+              ⚠️ Warning: This Action is Permanent
+            </h3>
+            <p style="color: #7F1D1D" class="leading-relaxed">
+              Deleting your account will permanently remove all your data, including workout history, goals, custom exercises, and account information. This action cannot be undone. Please consider exporting your data first.
+            </p>
+          </div>
+
+          <h3 class="text-xl font-semibold mb-4 mt-8" style="color: var(--color-text)">
+            How to Delete Your Account
+          </h3>
+          <div class="space-y-4 mb-8">
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-white"
+                  style="background-color: var(--color-primary)"
+                >
+                  1
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2" style="color: var(--color-text)">
+                    Export Your Data (Recommended)
+                  </h4>
+                  <p style="color: var(--color-text-muted)">
+                    Before deleting, consider <a href="#export-data" class="underline" style="color: var(--color-primary)">exporting your data</a> to keep a backup of your workout history.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-white"
+                  style="background-color: var(--color-primary)"
+                >
+                  2
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2" style="color: var(--color-text)">
+                    Go to Data & Privacy Settings
+                  </h4>
+                  <p style="color: var(--color-text-muted)">
+                    Open the app, go to Profile → Settings → Data & Privacy
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-white"
+                  style="background-color: var(--color-primary)"
+                >
+                  3
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2" style="color: var(--color-text)">
+                    Scroll to "Delete Account"
+                  </h4>
+                  <p style="color: var(--color-text-muted)">
+                    At the bottom of the Data & Privacy screen, tap "Delete My Account".
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-white"
+                  style="background-color: var(--color-primary)"
+                >
+                  4
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2" style="color: var(--color-text)">
+                    Confirm Deletion
+                  </h4>
+                  <p style="color: var(--color-text-muted)" class="mb-3">
+                    You'll be asked to confirm your decision. Enter your password or verify with biometrics to proceed.
+                  </p>
+                  <p style="color: var(--color-text-muted)" class="text-sm">
+                    You may also be asked to provide a reason for leaving (optional feedback).
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-white"
+                  style="background-color: var(--color-primary)"
+                >
+                  5
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-2" style="color: var(--color-text)">
+                    Account Deleted
+                  </h4>
+                  <p style="color: var(--color-text-muted)">
+                    Your account and all associated data will be permanently deleted within 30 days. You'll receive a confirmation email.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-semibold mb-4 mt-8" style="color: var(--color-text)">
+            Alternative: Request Deletion via Email
+          </h3>
+          <p style="color: var(--color-text-muted)" class="leading-relaxed mb-4">
+            If you're unable to access the app or prefer to request deletion via email, you can contact us:
+          </p>
+          <div
+            class="rounded-xl p-6"
+            style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+          >
+            <p style="color: var(--color-text)" class="mb-4">
+              Send an email to: <a href="mailto:privacy@clearmetricslab.com" class="underline font-semibold" style="color: var(--color-primary)">privacy@clearmetricslab.com</a>
+            </p>
+            <p style="color: var(--color-text-muted)" class="mb-2">
+              <strong>Subject:</strong> Account Deletion Request
+            </p>
+            <p style="color: var(--color-text-muted)" class="mb-4">
+              <strong>Include:</strong>
+            </p>
+            <ul style="color: var(--color-text-muted)" class="space-y-1 ml-6">
+              <li>• Your account email address</li>
+              <li>• Your username (if applicable)</li>
+              <li>• Confirmation that you want to permanently delete your account</li>
+            </ul>
+            <p style="color: var(--color-text-muted)" class="mt-4 text-sm">
+              We'll respond within 48 hours and process your deletion request within 30 days.
+            </p>
+          </div>
+        </section>
+
+        {/* What Happens After Deletion */}
+        <section class="pt-8 border-t" style="border-color: var(--color-border)">
+          <h2 class="text-3xl font-bold mb-6" style="color: var(--color-text)">
+            What Happens After Account Deletion
+          </h2>
+
+          <div class="space-y-4">
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <h3 class="text-lg font-semibold mb-3" style="color: var(--color-text)">
+                Immediate Actions
+              </h3>
+              <ul style="color: var(--color-text-muted)" class="space-y-2">
+                <li>• Your account is immediately deactivated (you can no longer log in)</li>
+                <li>• Your profile is removed from our systems</li>
+                <li>• Active subscriptions are canceled (no further charges)</li>
+              </ul>
+            </div>
+
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <h3 class="text-lg font-semibold mb-3" style="color: var(--color-text)">
+                Within 30 Days
+              </h3>
+              <ul style="color: var(--color-text-muted)" class="space-y-2">
+                <li>• All workout data permanently deleted from our databases</li>
+                <li>• All personal information removed from active systems</li>
+                <li>• Data removed from backups (according to backup retention schedule)</li>
+              </ul>
+            </div>
+
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <h3 class="text-lg font-semibold mb-3" style="color: var(--color-text)">
+                What We May Retain (Legal Requirements)
+              </h3>
+              <ul style="color: var(--color-text-muted)" class="space-y-2">
+                <li>• Transaction records (for tax and accounting purposes, typically 7 years)</li>
+                <li>• Support ticket history (may be anonymized)</li>
+                <li>• Aggregated, anonymized usage statistics (no personal identifiers)</li>
+              </ul>
+              <p style="color: var(--color-text-muted)" class="text-sm mt-3">
+                Any retained data is kept only as required by law and cannot be used to identify you.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQs */}
+        <section class="pt-8 border-t" style="border-color: var(--color-border)">
+          <h2 class="text-3xl font-bold mb-6" style="color: var(--color-text)">
+            Frequently Asked Questions
+          </h2>
+
+          <div class="space-y-4">
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <h3 class="text-lg font-semibold mb-2" style="color: var(--color-text)">
+                Can I recover my account after deletion?
+              </h3>
+              <p style="color: var(--color-text-muted)">
+                No. Account deletion is permanent and cannot be undone. Make sure to export your data before deleting if you want to keep a backup.
+              </p>
+            </div>
+
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <h3 class="text-lg font-semibold mb-2" style="color: var(--color-text)">
+                Will I get a refund if I delete my account?
+              </h3>
+              <p style="color: var(--color-text-muted)">
+                Subscription refunds are handled according to Google Play Store policies. If you purchased a lifetime plan within the last 30 days, please contact support@clearmetricslab.com to discuss refund options.
+              </p>
+            </div>
+
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <h3 class="text-lg font-semibold mb-2" style="color: var(--color-text)">
+                How long does it take to process a deletion request?
+              </h3>
+              <p style="color: var(--color-text-muted)">
+                In-app deletions are processed immediately. Email requests are processed within 48 hours. Full data removal from all systems takes up to 30 days.
+              </p>
+            </div>
+
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <h3 class="text-lg font-semibold mb-2" style="color: var(--color-text)">
+                Can I create a new account with the same email after deletion?
+              </h3>
+              <p style="color: var(--color-text-muted)">
+                Yes, after your account is fully deleted (30 days), you can create a new account with the same email address. However, your previous workout data will not be recoverable.
+              </p>
+            </div>
+
+            <div
+              class="rounded-xl p-6"
+              style="background-color: var(--color-bg); border: 1px solid var(--color-border)"
+            >
+              <h3 class="text-lg font-semibold mb-2" style="color: var(--color-text)">
+                Do you share my data with third parties?
+              </h3>
+              <p style="color: var(--color-text-muted)">
+                No. We do not sell or share your personal workout data with third parties for marketing purposes. See our <a href="/apps/workout-lab/privacy-policy" class="underline" style="color: var(--color-primary)">Privacy Policy</a> for details on service providers (Supabase, PowerSync) that help us operate the app.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Need Help */}
+        <section class="pt-8 border-t" style="border-color: var(--color-border)">
+          <h2 class="text-3xl font-bold mb-6" style="color: var(--color-text)">
+            Need Help?
+          </h2>
+          <p style="color: var(--color-text-muted)" class="leading-relaxed mb-6">
+            If you have questions about data management, privacy, or need assistance with any of these processes, we're here to help.
+          </p>
+          <div
+            class="rounded-xl p-8 text-center"
+            style="background-color: var(--color-bg); border: 2px solid var(--color-primary)"
+          >
+            <h3 class="text-xl font-bold mb-4" style="color: var(--color-text)">
+              Contact Our Support Team
+            </h3>
+            <div class="space-y-2">
+              <p style="color: var(--color-text-muted)">
+                Email: <a href="mailto:support@clearmetricslab.com" class="underline font-semibold" style="color: var(--color-primary)">support@clearmetricslab.com</a>
+              </p>
+              <p style="color: var(--color-text-muted)">
+                Privacy Requests: <a href="mailto:privacy@clearmetricslab.com" class="underline font-semibold" style="color: var(--color-primary)">privacy@clearmetricslab.com</a>
+              </p>
+            </div>
+            <p style="color: var(--color-text-muted)" class="text-sm mt-4">
+              We typically respond within 24-48 hours.
+            </p>
+          </div>
+        </section>
+
+        {/* Footer Navigation */}
+        <div
+          class="mt-12 pt-8 border-t"
+          style="border-color: var(--color-border)"
+        >
+          <div class="flex flex-wrap gap-4 justify-between">
+            <a
+              href="/apps/workout-lab/privacy-policy"
+              class="inline-flex items-center gap-2 hover:underline"
+              style="color: var(--color-primary)"
+            >
+              ← Privacy Policy
+            </a>
+            <a
+              href="/apps/workout-lab"
+              class="inline-flex items-center gap-2 hover:underline"
+              style="color: var(--color-primary)"
+            >
+              Back to Workout Lab →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>
