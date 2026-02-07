@@ -14,6 +14,7 @@ export function ContactForm({
     const [formData, setFormData] = useState({
         name: "",
         email: "",
+        appInterest: "General Inquiry",
         message: "",
     });
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -38,7 +39,7 @@ export function ContactForm({
             }
 
             setStatus("success");
-            setFormData({ name: "", email: "", message: "" });
+            setFormData({ name: "", email: "", appInterest: "General Inquiry", message: "" });
 
             // Reset to idle after 3 seconds
             setTimeout(() => setStatus("idle"), 3000);
@@ -88,6 +89,24 @@ export function ContactForm({
                     placeholder="you@example.com"
                     disabled={status === "loading"}
                 />
+            </div>
+
+            <div>
+                <label htmlFor="appInterest" className="block text-sm font-medium text-text-muted mb-2">
+                    App Interest
+                </label>
+                <select
+                    id="appInterest"
+                    value={formData.appInterest}
+                    onChange={(e) => setFormData({ ...formData, appInterest: e.target.value })}
+                    className={inputStyles}
+                    disabled={status === "loading"}
+                >
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Workout Lab">Workout Lab</option>
+                    <option value="Vitamin D Tracker">Vitamin D Tracker</option>
+                    <option value="Other">Other</option>
+                </select>
             </div>
 
             <div>
