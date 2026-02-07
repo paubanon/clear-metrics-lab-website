@@ -7,28 +7,54 @@ const features = [
   {
     icon: Zap,
     title: "Unmatched Flow",
-    description: "Seamlessly rearrange exercises and supersets on-the-fly without losing your data. In the gym and the machine is occupied? In a rush and need to modify your training structure? Simply drag and drop exercises to adapt your workout in real-time. Switch between straight sets and supersets effortlessly. This level of flexibility means you're never stuck waiting or wasting time—your workout adapts to the gym environment, not the other way around. No other app comes close to this dynamic workout flow.",
+    description: "Seamlessly rearrange exercises and supersets on-the-fly without losing your data. Your workout adapts to the gym environment, not the other way around.",
+    highlights: [
+      "Drag and drop exercises to reorder in real-time",
+      "Switch between straight sets and supersets effortlessly",
+      "Machine occupied? Instantly adjust your workout structure",
+      "Never waste time waiting—adapt on the fly",
+    ],
     image: "/images/apps/workout-lab/screenshots/active-workout-light-theme.jpg",
     highlight: false,
   },
   {
     icon: Rocket,
     title: "Log Any Exercise, Any Way",
-    description: "Built for multidisciplinary athletes: strength training, CrossFit, calisthenics, powerlifting, Olympic lifting, mobility work, yoga, strongman events, and more. Track Load, Reps, Time, Distance, Range of Motion, Body Weight, and any combination of metrics that fit your training. Whether you're doing farmers carries, pistol squats, handstand holds, or traditional bench press—log it exactly how you need it. Complete flexibility for every movement, every sport, every goal.",
+    description: "Built for multidisciplinary athletes with complete tracking flexibility for every movement, every sport, every goal.",
+    highlights: [
+      "Perfect for: Strength, CrossFit, Calisthenics, Powerlifting, Olympic Lifting, Yoga, Strongman",
+      "Track: Load, Reps, Time, Distance, Range of Motion, Body Weight",
+      "Examples: Farmers carries, pistol squats, handstand holds, bench press",
+      "Any combination of metrics that fit your training",
+    ],
     image: "/images/apps/workout-lab/screenshots/exercise-farmers-carry.jpg",
     highlight: false,
   },
   {
     icon: LineChart,
     title: "Data Analysis & Predictive Metrics",
-    description: "Make informed decisions with laboratory-grade analytics. Track your 1RM evolution over time, visualize Max/Avg/Min performance metrics, and analyze volume and intensity trends with dual Y-axis charts. Understand exactly what's working in your training and what needs adjustment. No more guessing—let the data guide your programming decisions. Advanced visualizations turn your workout history into actionable insights for continuous improvement.",
+    description: "Make informed decisions with laboratory-grade analytics. No more guessing—let the data guide your programming decisions.",
+    highlights: [
+      "1RM evolution tracking over time",
+      "Max/Avg/Min performance metrics visualization",
+      "Volume and intensity trend analysis",
+      "Dual Y-axis charts for comprehensive insights",
+      "Turn workout history into actionable improvements",
+    ],
     image: "/images/apps/workout-lab/screenshots/Exercise_analysis.jpg",
     highlight: false,
   },
   {
     icon: Target,
     title: "Proprietary Goal Algorithm",
-    description: "Stay motivated and engaged with our unique goal-tracking system. Set multi-metric goals and watch real-time progress with delta improvements (+6% closer to your squat PR, +3% increase in volume this week). Goals are scientifically proven to boost motivation, maintain engagement, and accelerate progress. See exactly how much you've improved and how close you are to your targets. This feature alone has transformed how thousands of athletes approach their training.",
+    description: "Stay motivated and engaged with our unique goal-tracking system. See exactly how much you've improved and how close you are to your targets.",
+    highlights: [
+      "Real-time progress with delta improvements (+6%, +3%)",
+      "Multi-metric goal setting and tracking",
+      "Scientifically proven to boost motivation",
+      "Accelerate progress with clear milestones",
+      "Transformed how thousands of athletes train",
+    ],
     image: "/images/apps/workout-lab/screenshots/delta-improvement-dark-theme.png",
     highlight: true, // Standout feature
   },
@@ -126,11 +152,27 @@ export function FeaturesSection() {
                     </div>
                   )}
                   <p
-                    className="text-lg leading-relaxed"
+                    className="text-lg leading-relaxed mb-4"
                     style={{ color: "var(--color-text-muted)" }}
                   >
                     {feature.description}
                   </p>
+                  <ul className="space-y-2">
+                    {feature.highlights.map((highlight, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <div
+                          className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0"
+                          style={{ backgroundColor: "var(--color-primary)" }}
+                        />
+                        <span
+                          className="text-base"
+                          style={{ color: "var(--color-text-muted)" }}
+                        >
+                          {highlight}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
                 <div className={index % 2 === 1 ? "md:order-1" : ""}>
                   <img
