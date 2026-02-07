@@ -20,8 +20,8 @@ export function Contact({ webhookUrl }: ContactProps) {
                                 Get in Touch
                             </h2>
                             <p className="text-text-muted leading-relaxed mb-8">
-                                Have an app idea? Want to collaborate? I'd love to hear from you.
-                                Drop me a message and I'll get back to you as soon as possible.
+                                Questions about our apps? Interested in collaboration? I welcome inquiries about ClearMetrics Lab tools and methodologies.
+                                Drop me a message and I'll respond promptly.
                             </p>
 
                             <div className="flex items-center gap-4 p-5 rounded-xl bg-zinc-900/40 backdrop-blur-2xl border border-white/10">

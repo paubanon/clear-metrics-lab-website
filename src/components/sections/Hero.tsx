@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 
-const headlineWords = ["Building", "the", "next", "generation", "of", "apps."];
+const headlineWords = ["Science-backed", "mobile", "tools", "for", "better", "living."];
 
 export function Hero() {
     return (
@@ -27,7 +27,7 @@ export function Hero() {
                     transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
                 >
                     <span className="inline-block px-4 py-1.5 mb-8 text-sm font-medium text-accent bg-white/5 border border-white/10 rounded-full backdrop-blur-sm">
-                        Mobile App Development Studio
+                        ClearMetrics Lab
                     </span>
                 </motion.div>
 
@@ -43,7 +43,7 @@ export function Hero() {
                                 delay: 0.1 + index * 0.08,
                                 ease: [0.25, 0.1, 0.25, 1],
                             }}
-                            className={`inline-block mr-[0.25em] ${word === "next" || word === "generation"
+                            className={`inline-block mr-[0.25em] ${word === "Science-backed" || word === "tools"
                                 ? "gradient-text"
                                 : ""
                                 }`}
@@ -59,8 +59,8 @@ export function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
                 >
-                    Crafting beautiful, performant mobile experiences that users love.
-                    From concept to App Store, we bring your ideas to life.
+                    Every app is grounded in rigorous data analysis and scientific principles.
+                    We build tools that solve real problems with evidence-based approaches.
                 </motion.p>
 
                 <motion.div
