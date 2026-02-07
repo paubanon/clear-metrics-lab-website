@@ -92,7 +92,7 @@ export function FeaturesSection() {
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div className={index % 2 === 1 ? "md:order-2" : ""}>
                   <div
-                    className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-4"
+                    className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-6"
                     style={{
                       backgroundColor: `${
                         feature.highlight
@@ -102,21 +102,21 @@ export function FeaturesSection() {
                     }}
                   >
                     <feature.icon
-                      className="w-6 h-6"
+                      className="w-8 h-8"
                       style={{
                         color: feature.highlight ? "#FFFFFF" : "var(--color-primary)",
                       }}
                     />
                   </div>
                   <h3
-                    className="text-2xl font-bold mb-3"
+                    className="text-3xl md:text-4xl font-bold mb-4"
                     style={{ color: "var(--color-text)" }}
                   >
                     {feature.title}
                   </h3>
                   {feature.highlight && (
                     <div
-                      className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-3"
+                      className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-4"
                       style={{
                         backgroundColor: "var(--color-primary)",
                         color: "#FFFFFF",
@@ -126,7 +126,7 @@ export function FeaturesSection() {
                     </div>
                   )}
                   <p
-                    className="text-lg leading-relaxed"
+                    className="text-xl md:text-2xl leading-relaxed"
                     style={{ color: "var(--color-text-muted)" }}
                   >
                     {feature.description}

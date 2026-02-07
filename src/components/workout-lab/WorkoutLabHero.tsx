@@ -108,10 +108,10 @@ export function WorkoutLabHero() {
                   className="text-3xl font-bold mb-1"
                   style={{ color: "var(--color-primary)" }}
                 >
-                  100%
+                  Free
                 </div>
                 <div className="text-sm" style={{ color: "var(--color-text-muted)" }}>
-                  Offline Support
+                  to Start
                 </div>
               </div>
               <div>

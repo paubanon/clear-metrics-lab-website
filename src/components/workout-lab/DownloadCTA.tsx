@@ -47,7 +47,7 @@ export function DownloadCTA() {
           className="mt-6 text-sm"
           style={{ color: "var(--color-text-muted)" }}
         >
-          Free • No Ads • No Tracking • 100% Offline
+          Start free • No Ads • No Tracking • Upgrade for offline & analytics
         </p>
       </motion.div>
     </section>

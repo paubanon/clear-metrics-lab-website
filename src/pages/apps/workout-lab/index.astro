@@ -4,6 +4,7 @@ import { ThemeProvider } from "../../../components/ThemeProvider";
 import { ThemeToggle } from "../../../components/ThemeToggle";
 import { WorkoutLabHero } from "../../../components/workout-lab/WorkoutLabHero";
 import { FeaturesSection } from "../../../components/workout-lab/FeaturesSection";
+import { PricingSection } from "../../../components/workout-lab/PricingSection";
 import { DownloadCTA } from "../../../components/workout-lab/DownloadCTA";
 
 const title = "Workout Lab - Ultimate Flexible Workout Tracker for Serious Athletes";
@@ -31,6 +32,9 @@ const description = "Track any exercise, any way. Seamless supersets, powerful d
 
     {/* Features Section */}
     <FeaturesSection client:load />
+
+    {/* Pricing Section */}
+    <PricingSection client:load />
 
     {/* Download CTA */}
     <DownloadCTA client:load />
