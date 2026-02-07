@@ -2,6 +2,9 @@
 import MainLayout from "../../../layouts/MainLayout.astro";
 import { ThemeProvider } from "../../../components/ThemeProvider";
 import { ThemeToggle } from "../../../components/ThemeToggle";
+import { WorkoutLabHero } from "../../../components/workout-lab/WorkoutLabHero";
+import { FeaturesSection } from "../../../components/workout-lab/FeaturesSection";
+import { DownloadCTA } from "../../../components/workout-lab/DownloadCTA";
 
 const title = "Workout Lab - Ultimate Flexible Workout Tracker for Serious Athletes";
 const description = "Track any exercise, any way. Seamless supersets, powerful data analysis, and proprietary goal algorithm. Built for strength athletes, CrossFit, calisthenics, and powerlifting.";
@@ -12,26 +15,37 @@ const description = "Track any exercise, any way. Seamless supersets, powerful d
   description={description}
 >
   <div class="min-h-screen bg-[var(--color-bg-dark)] text-[var(--color-text)] transition-colors duration-300">
-    <ThemeProvider client:only="react">
-      {/* Theme Toggle - Fixed position */}
-      <div class="fixed top-6 right-6 z-50">
-        <ThemeToggle client:only="react" />
-      </div>
-    </ThemeProvider>
+    {/* Hero Section with integrated theme toggle */}
+    <div class="relative">
+      <ThemeProvider client:only="react">
+        {/* Theme Toggle - Centered at top, floating */}
+        <div class="absolute top-8 left-1/2 -translate-x-1/2 z-50">
+          <div class="backdrop-blur-md bg-[var(--color-bg)]/60 rounded-full p-1 shadow-lg" style="border: 1px solid var(--color-border)">
+            <ThemeToggle client:only="react" />
+          </div>
+        </div>
+      </ThemeProvider>
 
-    {/* Sections will go here */}
-    <div class="pt-20">
-      <div class="max-w-6xl mx-auto px-6 py-32">
-        <h1 class="text-5xl font-bold mb-6" style="color: var(--color-primary)">
-          Workout Lab
-        </h1>
-        <p class="text-xl mb-8" style="color: var(--color-text-muted)">
-          Ultimate Flexible Workout Tracker for Serious Athletes
-        </p>
-        <p class="text-lg" style="color: var(--color-text-muted)">
-          Landing page sections coming soon...
-        </p>
-      </div>
+      <WorkoutLabHero client:load />
     </div>
+
+    {/* Features Section */}
+    <FeaturesSection client:load />
+
+    {/* Download CTA */}
+    <DownloadCTA client:load />
+
+    {/* Footer */}
+    <footer class="py-12 px-6 border-t" style="border-color: var(--color-border)">
+      <div class="max-w-6xl mx-auto text-center">
+        <p style="color: var(--color-text-muted)">
+          © 2026 ClearMetrics Lab. Built with scientific precision.
+        </p>
+        <div class="mt-4 flex justify-center gap-6">
+          <a href="/apps/workout-lab/privacy-policy" style="color: var(--color-text-muted)" class="hover:underline">Privacy Policy</a>
+          <a href="/#contact" style="color: var(--color-text-muted)" class="hover:underline">Contact</a>
+        </div>
+      </div>
+    </footer>
   </div>
 </MainLayout>

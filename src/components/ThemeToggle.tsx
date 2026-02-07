@@ -9,35 +9,44 @@ export function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="relative inline-flex items-center gap-2 px-4 py-2 rounded-full
-        transition-colors duration-300
-        bg-[var(--color-bg)] border border-[var(--color-border)]
-        hover:border-[var(--color-primary)]"
+      className="relative inline-flex items-center gap-3 px-2 py-2 rounded-full
+        transition-all duration-300
+        hover:scale-105"
+      style={{
+        backgroundColor: "var(--color-bg)",
+        border: "2px solid var(--color-border)",
+      }}
       aria-label="Toggle theme"
     >
-      <Sun
-        className={`w-4 h-4 transition-all duration-300 ${
-          theme === "light" ? "text-[var(--color-primary)]" : "text-[var(--color-text-muted)]"
-        }`}
-      />
-      <div className="relative w-10 h-6">
-        <div
-          className={`absolute inset-0 rounded-full transition-colors duration-300 ${
-            theme === "dark" ? "bg-[var(--color-primary)]" : "bg-[var(--color-border)]"
-          }`}
-        />
-        <div
-          className={`absolute top-1 left-1 w-4 h-4 rounded-full bg-white
-            transition-transform duration-300 ${
-            theme === "dark" ? "translate-x-4" : "translate-x-0"
-          }`}
+      {/* Sun Icon */}
+      <div
+        className="flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300"
+        style={{
+          backgroundColor: theme === "light" ? "var(--color-primary)" : "transparent",
+        }}
+      >
+        <Sun
+          className="w-5 h-5 transition-all duration-300"
+          style={{
+            color: theme === "light" ? "#FFFFFF" : "var(--color-text-muted)",
+          }}
         />
       </div>
-      <Moon
-        className={`w-4 h-4 transition-all duration-300 ${
-          theme === "dark" ? "text-[var(--color-primary)]" : "text-[var(--color-text-muted)]"
-        }`}
-      />
+
+      {/* Moon Icon */}
+      <div
+        className="flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300"
+        style={{
+          backgroundColor: theme === "dark" ? "var(--color-primary)" : "transparent",
+        }}
+      >
+        <Moon
+          className="w-5 h-5 transition-all duration-300"
+          style={{
+            color: theme === "dark" ? "#FFFFFF" : "var(--color-text-muted)",
+          }}
+        />
+      </div>
     </button>
   );
 }
