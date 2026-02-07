@@ -43,7 +43,10 @@ export function About() {
               </p>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-accent-blue to-accent hover:from-accent-blue/80 hover:to-accent/80 transition-all duration-300 font-semibold"
+                className="inline-flex items-center px-6 py-3 text-white font-medium rounded-lg
+                  bg-white/10 backdrop-blur-sm border border-white/20
+                  glow-border
+                  hover:bg-white/15 transition-all duration-300"
               >
                 Get in Touch
               </a>
