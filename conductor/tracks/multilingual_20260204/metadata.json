@@ -1,0 +1,20 @@
+{
+  "track_id": "multilingual_20260204",
+  "type": "feature",
+  "status": "new",
+  "priority": "low",
+  "depends_on": [],
+  "estimated_hours": null,
+  "created_at": "2026-02-04T12:30:00Z",
+  "updated_at": "2026-02-04T12:30:00Z",
+  "description": "Integrate a multilingual option for the app. Default: System language. On Settings: Toggle to change.",
+  "beads_epic": "cml-website-4b9",
+  "beads_tasks": {
+    "phase1": "cml-website-4b9.1",
+    "phase2": "cml-website-4b9.2",
+    "phase3": "cml-website-4b9.3",
+    "phase4": "cml-website-4b9.4",
+    "phase5": "cml-website-4b9.5",
+    "phase6": "cml-website-4b9.6"
+  }
+}

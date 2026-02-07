@@ -1,0 +1,37 @@
+---
+import MainLayout from "../../../layouts/MainLayout.astro";
+import { ThemeProvider } from "../../../components/ThemeProvider";
+import { ThemeToggle } from "../../../components/ThemeToggle";
+
+const title = "Workout Lab - Ultimate Flexible Workout Tracker for Serious Athletes";
+const description = "Track any exercise, any way. Seamless supersets, powerful data analysis, and proprietary goal algorithm. Built for strength athletes, CrossFit, calisthenics, and powerlifting.";
+---
+
+<MainLayout
+  title={title}
+  description={description}
+>
+  <div class="min-h-screen bg-[var(--color-bg-dark)] text-[var(--color-text)] transition-colors duration-300">
+    <ThemeProvider client:only="react">
+      {/* Theme Toggle - Fixed position */}
+      <div class="fixed top-6 right-6 z-50">
+        <ThemeToggle client:only="react" />
+      </div>
+    </ThemeProvider>
+
+    {/* Sections will go here */}
+    <div class="pt-20">
+      <div class="max-w-6xl mx-auto px-6 py-32">
+        <h1 class="text-5xl font-bold mb-6" style="color: var(--color-primary)">
+          Workout Lab
+        </h1>
+        <p class="text-xl mb-8" style="color: var(--color-text-muted)">
+          Ultimate Flexible Workout Tracker for Serious Athletes
+        </p>
+        <p class="text-lg" style="color: var(--color-text-muted)">
+          Landing page sections coming soon...
+        </p>
+      </div>
+    </div>
+  </div>
+</MainLayout>

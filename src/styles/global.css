@@ -1,34 +1,84 @@
 @import "tailwindcss";
 
 @layer base {
+  /* Workout Lab App Theme - Matches React Native exactly */
+  :root.light {
+    --color-primary: #007AFF;
+    --color-bg-dark: #F2F2F7;
+    --color-bg: #FFFFFF;
+    --color-bg-light: #FFFFFF;
+    --color-text: #000000;
+    --color-text-muted: #6C6C70;
+    --color-border: rgba(0, 0, 0, 0.1);
+    --color-success: #34C759;
+    --color-danger: #FF3B30;
+    --color-warning: #FFCC00;
+
+    /* Accent RGB split for utilities */
+    --accent-r: 0;
+    --accent-g: 122;
+    --accent-b: 255;
+  }
+
+  :root.dark {
+    --color-primary: #65D984;
+    --color-bg-dark: #1C1C1E;
+    --color-bg: #2C2C2E;
+    --color-bg-light: #3A3A3C;
+    --color-text: #F2F2F7;
+    --color-text-muted: #AEAEB2;
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-success: #32D74B;
+    --color-danger: #FF453A;
+    --color-warning: #FFD60A;
+
+    /* Accent RGB split for utilities */
+    --accent-r: 101;
+    --accent-g: 217;
+    --accent-b: 132;
+  }
+
+  /* Default to light theme */
   :root {
-    /* Zinc Palette (Premium Dark) */
+    --color-primary: #007AFF;
+    --color-bg-dark: #F2F2F7;
+    --color-bg: #FFFFFF;
+    --color-bg-light: #FFFFFF;
+    --color-text: #000000;
+    --color-text-muted: #6C6C70;
+    --color-border: rgba(0, 0, 0, 0.1);
+    --color-success: #34C759;
+    --color-danger: #FF3B30;
+    --color-warning: #FFCC00;
+
+    /* Legacy zinc palette (fallback) */
     --bg-main: #09090b;
     --bg-surface: #18181b;
     --border-color: rgba(255, 255, 255, 0.08);
-
-    /* Text */
     --text-primary: #fafafa;
     --text-muted: #a1a1aa;
 
-    /* Electric Blue Accent - RGB split for opacity magic */
-    --accent-r: 56;
-    --accent-g: 189;
-    --accent-b: 248;
-    --color-accent: rgb(var(--accent-r), var(--accent-g), var(--accent-b));
+    /* Accent RGB split */
+    --accent-r: 0;
+    --accent-g: 122;
+    --accent-b: 255;
 
     /* Cyan for gradient */
     --cyan-r: 34;
     --cyan-g: 211;
     --cyan-b: 238;
+
+    /* Unified accent */
+    --color-accent: rgb(var(--accent-r), var(--accent-g), var(--accent-b));
   }
 
   html {
     font-family: "Geist", system-ui, sans-serif;
-    background-color: var(--bg-main);
-    color: var(--text-primary);
+    background-color: var(--color-bg-dark);
+    color: var(--color-text);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   body {
